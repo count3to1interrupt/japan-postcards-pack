@@ -2,7 +2,7 @@
 
 A prompt pack for generating nostalgic "postcard from Japan" photos featuring the default Muse character.
 
-The pack was built for a small toy: a space where Muse travels through Japan on your behalf and a postcard — one photo, with a short handwritten-style message — is waiting for you once a day. It is a *revisit* toy, aimed at people who have been to Japan and want to walk their memories once more: Muse re-walks a region they miss, and the postcards lean everyday (roughly 3 parts sightseeing to 7 parts ordinary life, as a guideline within the chosen region rather than a fixed ratio).
+The pack was built for a small toy: a space where Muse travels through Japan on your behalf and a postcard — one photo, with a short handwritten-style message — is waiting for you once a day. It is a *revisit* toy, aimed at people who have been to Japan and want to walk their memories once more: Muse re-walks the Japan they miss, and the postcards lean everyday (roughly 3 parts sightseeing to 7 parts ordinary life, as a guideline within the pool rather than a fixed ratio).
 
 The core insight of the pack is that the photos must not look like tourist posters. They should look like unpolished smartphone snapshots a traveler happened to take — slightly tilted, a little awkwardly cropped, full of the ordinary clutter of real places — with a small cream-colored plush character, about 1 m tall, somewhere in the frame.
 
@@ -31,7 +31,7 @@ Generated with this pack's guide and place cards (see `docs/qa-field-notes.md` f
 - **`docs/place-cards.md`** — place cards for 18 places (Shibuya Scramble Crossing, Meiji Jingu, Takeshita Street, Senso-ji, Miyajima, Fushimi Inari, Kiyomizu-dera, the Arashiyama bamboo grove, Omoide Yokocho, Golden Gai, Don Quijote, an ordinary izakaya, a matcha cafe, a convenience store, a Yamanote Line platform, a residential back street at night, an onsen, and an alley with a vending machine). Each card fixes, in advance, the one key feature that makes the place recognizable, the facts where the real place differs from AI's average image of it, the angle, how to handle the elements that break, the crowd density, and action restrictions — plus ready-to-use English prompt variables.
 - **`docs/qa-field-notes.md`** — field notes from the QA process: the taste corrections that accumulated over the batches (don't lean Showa, don't lean exotic, no mosaics by default, Muse's size is a range rather than a fixed value…), the working principles that came out of them, a worked example of verbalizing a place from real photos (Don Quijote's six elements), and what tested strongest.
 - **`docs/reproducibility.md`** — an honest note on what in this pack reproduces from the documents alone, what travels only as one person's calibrated starting values (the judging tolerance, the taste corrections), and what does not travel at all (how each place's key feature was discovered, the place selection, the generation pipeline). Read this before expecting the samples' quality out of the box.
-- **`docs/space-spec.md`** — the specification of the Space itself: one postcard a day inside one fixed region, a route decided in advance, days advancing by the visitor's local date whether opened or not, the start flow (name, and the "What do you miss most about Japan?" choice), the sealed letter that flips into the postcard, the rules for the handwritten line, the minimal per-visitor state model, and what the pre-generated photo pool must contain.
+- **`docs/space-spec.md`** — the specification of the Space itself: one postcard a day for seven days, seven postcards drawn at random from a Japan-wide pool at trip start and fixed for that visitor, days advancing by the visitor's local date whether opened or not, the start flow (name, and the "What do you miss most about Japan?" choice), the sealed letter that flips into the postcard, the rules for the handwritten line, the minimal per-visitor state model, and what the pre-generated photo pool must contain.
 - **`examples/`** — example generated photos: the photo layer of the postcards, before the handwritten line and paper band are composited in your own pipeline.
 
 ## How to use it
@@ -42,7 +42,7 @@ Generated with this pack's guide and place cards (see `docs/qa-field-notes.md` f
 4. Composite the handwritten line in afterwards, as a separate step, on a cream paper band. Keep it short and quiet — the guide's rule is a line with room in it, like "Still here, still warm.", that does not pretend to know the recipient's memories.
 5. Check the result against the guide's checklist and its two pass conditions: the image is free of breakage, *and* someone who has visited the place can recognize it as that place.
 
-For a minimal run, the design's first test form is a 3-day Kyoto trip: Fushimi Inari in the morning, a vending machine at night, a matcha cafe in the afternoon — one postcard a day.
+To run it: build a Japan-wide pool of postcards from the place cards (leaning everyday), and let each trip draw seven at random — one postcard a day for seven days.
 
 ## Status
 

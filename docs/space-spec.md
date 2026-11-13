@@ -14,7 +14,7 @@ to build everything, see `BUILD.md` at the repository root.
 
 A small toy: Muse travels through Japan on the visitor's behalf, and one
 postcard is waiting for the visitor each day. It is a **revisit** toy,
-aimed at people who have been to Japan: Muse re-walks a region the
+aimed at people who have been to Japan: Muse re-walks the Japan the
 visitor misses, and each postcard is a photo of a place there — with the
 default Muse character somewhere in the frame — plus a single
 handwritten-style line. That is all a postcard carries: no long diary, no
@@ -28,24 +28,23 @@ sent word.
 
 - **One postcard per day.** The first card is available as soon as the
   trip starts; after that, one new card per day.
-- **One region, fixed.** A trip stays inside a single chosen region. The
-  promise is not "somewhere in Japan" but "Muse walks the region you
-  miss, once more."
-- **The route is defined in advance.** Before the trip starts, the full
-  sequence of postcards for the trip's length is fixed for that visitor
-  (which place cards, in which order). Nothing is drawn at random on
-  later visits; re-opening the Space never shows a different photo or a
-  duplicate.
+- **Japan-wide.** A trip roams Japan: the photo pool spans regions, and
+  the promise is not one fixed region but "Muse went back to Japan for
+  you, once more."
+- **The seven are drawn at random, once.** At trip start, seven
+  postcards are drawn at random from the pre-generated pool and fixed
+  for that visitor as the trip's sequence (stored in `postcard_ids`).
+  The draw never changes on later visits; re-opening the Space never
+  shows a different photo or a duplicate within the trip. A new trip
+  (after a reset) draws fresh.
 - **Days advance by the visitor's local date — opened or not.** If the
   visitor skips days, the trip still moves on. Past days are not lost:
   they wait in the album and can be read together later.
-- **Mix inside the region:** roughly 3 parts sightseeing to 7 parts
-  everyday life, as a guideline to tune within the region — not a fixed
+- **Mix inside the pool:** roughly 3 parts sightseeing to 7 parts
+  everyday life, as a guideline for composing the pool — not a fixed
   ratio. The everyday side (a convenience store, a station platform, a
   vending machine on a night street) is where the memories live.
-- **Length:** 7 days (7 postcards) is the design's working default; the
-  validated first-test shape is 3 days (see "The validated minimum
-  shape" below).
+- **Length:** 7 days (7 postcards).
 - **Language:** English. (In the source design this is a provisional
   decision; because the text is composited on the display side, it can
   be changed later without regenerating any photo.)
@@ -54,7 +53,9 @@ sent word.
 
 ## Start flow
 
-1. **Choose the region** — one region; the trip is fixed to it.
+1. **The draw happens at start** — seven postcards are drawn at random
+   from the pool and fixed as this visitor's trip (see "The shape of a
+   trip").
 2. **Enter a name** for the letters to be addressed to. If left empty,
    the name defaults to "Traveler".
 3. **Answer one question: "What do you miss most about Japan?"** — a
@@ -81,8 +82,8 @@ The trip starts immediately: the first postcard can be opened right away.
 Each day arrives as a **sealed letter**, not as a bare photo.
 
 - **Front (what the visitor sees first):** an envelope-like face
-  addressed "For {name}", marked "from Muse — {region}", with a
-  postmark and a stamp from the region. A day that has not been opened
+  addressed "For {name}", marked "from Muse — Japan", with a
+  postmark and a stamp. A day that has not been opened
   yet is presented in this sealed form (in the album, too, unopened days
   show as sealed letters marked "Sealed").
 - **Flip:** the visitor taps the letter and it flips over to the
@@ -115,7 +116,7 @@ Each day arrives as a **sealed letter**, not as a bare photo.
   in the start flow.
 - **The final day ends with afterglow, not "complete."** All the
   postcards line up in the album, Muse is home — a short line to that
-  effect (the prototype's closing line: *"Muse is home. Kyoto is still
+  effect (the closing line: *"Muse is home. Japan is still
   there, whenever you are."*) — together with a recap of what the
   visitor said they missed ("What you missed: …"), and a path to open
   the first day's postcard once more.
@@ -133,7 +134,7 @@ State is deliberately minimal. Per visitor, the Space keeps:
 
 | Field | Meaning |
 |---|---|
-| `trip_id` | Which trip (region + route) this visitor is on |
+| `trip_id` | Which trip (this visitor's drawn sequence) |
 | `start_date` | The visitor's local date the trip started — day numbers are counted from this |
 | `last_claimed_day` | The furthest day the visitor has been shown |
 | `selected_memory` | The answer to "What do you miss most about Japan?" |
@@ -197,22 +198,20 @@ should keep equivalents while testing:
   for the calendar, so a whole trip can be walked in one sitting.
 - **Reset trip** — clear the visitor state and start over.
 
-## The validated minimum shape
+## The current shape
 
-The first test form, and the shape whose behavior this spec describes,
-is a **3-day Kyoto trip**:
-
-- **Day 1** — Fushimi Inari in the morning
-- **Day 2** — a vending machine at night
-- **Day 3** — a matcha cafe in the afternoon
-
-It is tested against exactly one question, with 3–5 people who have
-travelled to Japan:
+A trip is **7 days**: seven postcards drawn at random from a Japan-wide
+pool, one waiting each day. It is tested against exactly one question,
+with 3–5 people who have travelled to Japan:
 
 > **Did it make you remember your own trip to Japan — and want
 > tomorrow's card too?**
 
-Only if that holds does the trip grow to the full 7 days.
+History: the design was first prototyped as a fixed **3-day Kyoto
+trip** (Day 1 — Fushimi Inari in the morning; Day 2 — a vending machine
+at night; Day 3 — a matcha cafe in the afternoon). On 2026-11-13 the
+owner replaced that framing with the Japan-wide 7-day random draw:
+Kyoto was one region of Japan, not the trip itself.
 
 ## Open and unverified items
 

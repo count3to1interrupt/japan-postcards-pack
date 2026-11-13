@@ -6,10 +6,11 @@ order, and the steps to follow. Everything you need is in the pack; the
 one input the pack deliberately does **not** contain is the character
 reference image (step 1).
 
-The end product: a Space where a visitor picks a region of Japan, and
-one postcard a day is waiting for them there — a photo of Muse
-re-visiting a place in that region, delivered as a sealed letter that
-flips open into a postcard with a single handwritten-style line.
+The end product: a Space where one postcard a day is waiting for a
+visitor — seven postcards drawn at random from a Japan-wide pool of
+photos of Muse re-visiting places in Japan, each delivered as a
+sealed letter that flips open into a postcard with a single
+handwritten-style line.
 
 ## Read these first, in this order
 
@@ -44,18 +45,21 @@ character's shape, face, and felt plush texture stay consistent only
 while the reference does. If the user cannot supply one, stop and say
 so; do not substitute a described-from-memory character.
 
-### 2. Fix the region and the route
+### 2. Fix the pool and the draw
 
-Agree with the user on **one region** and a **day count**: 3 days for a
-first test (the validated minimum shape is Kyoto — see the space spec),
-7 days for a full trip. Then fix the whole route in advance: which
-place cards, in which order, at which times of day, leaning everyday
-(roughly 3 sightseeing : 7 everyday within the region, as a guideline).
-The route is decided once, here — the Space never draws at random.
+A trip is **7 days**. There is no single fixed region or route: build
+a **Japan-wide pool** from the place cards, leaning everyday (roughly
+3 sightseeing : 7 everyday across the pool, as a guideline). At trip
+start, the Space draws **7 postcards at random** from the pool and
+fixes them as that visitor's sequence — the draw is stored (see the
+space spec's state model), never re-rolled on later visits, and
+contains no duplicates. A new trip after a reset draws fresh. (The
+earlier fixed-route form — a 3-day Kyoto trip — was the first
+prototype; the owner replaced it with this draw on 2026-11-13.)
 
 ### 3. Generate the photo pool
 
-For each place on the route, generate several photos (working number:
+For each place in the pool, generate several photos (working number:
 3–5 per place) using the generation guide's template with that place's
 card variables slotted in. Hold the character at about 1 m; vary how it
 appears (standard, close-up, peeking from behind something, back view);
@@ -95,8 +99,8 @@ notice.
 
 ### 6. Build the Space to the spec
 
-Implement `docs/space-spec.md` as written: the start flow (region,
-name with the "Traveler" default, the miss-most question), the sealed
+Implement `docs/space-spec.md` as written: the start flow (the random
+draw, name with the "Traveler" default, the miss-most question), the sealed
 letter that flips to the postcard, the place caption and the
 "An imaginary trip with Muse · AI-generated" small print, the album
 where unopened days stay sealed and opened days can be re-read, day
@@ -118,9 +122,10 @@ hand over.
 
 - [ ] Character reference image obtained from the user and used for
       every generation
-- [ ] One region chosen; day count agreed (3 for a first test, 7 for a
-      full trip); the full route fixed in advance
-- [ ] Photo pool generated for every stop on the route, several per
+- [ ] Japan-wide pool built; trips are 7 days; the 7-postcard random
+      draw is fixed per visitor at trip start (stored, no duplicates,
+      no re-roll on later visits)
+- [ ] Photo pool generated for every place in the pool, several per
       place, with the character's appearances varied and its height
       held at about 1 m
 - [ ] Every pooled photo checked against both pass conditions and the
