@@ -1,8 +1,8 @@
 # japan-postcards-pack
 
-A prompt pack for generating nostalgic "postcard from Japan" photos featuring the default Muse character.
+A prompt pack for generating nostalgic "postcard from Japan" photos featuring your own Muse — the avatar you configured for it.
 
-The pack was built for a small toy: a space where Muse travels through Japan on your behalf and a postcard — one photo, with a short handwritten-style message — is waiting for you once a day. It is a *revisit* toy, aimed at people who have been to Japan and want to walk their memories once more: Muse re-walks the Japan they miss, and the postcards lean everyday (roughly 3 parts sightseeing to 7 parts ordinary life, as a guideline within the pool rather than a fixed ratio).
+The pack was built for a small toy: a space where your own Muse — wearing the avatar you configured for it — travels through Japan on your behalf and a postcard — one photo, with a short handwritten-style message — is waiting for you once a day. It is a *revisit* toy, aimed at people who have been to Japan and want to walk their memories once more: Muse re-walks the Japan they miss, and the postcards lean everyday (roughly 3 parts sightseeing to 7 parts ordinary life, as a guideline within the pool rather than a fixed ratio).
 
 The core insight of the pack is that the photos must not look like tourist posters. They should look like unpolished smartphone snapshots a traveler happened to take — slightly tilted, a little awkwardly cropped, full of the ordinary clutter of real places — with a small cream-colored plush character, about 1 m tall, somewhere in the frame.
 
@@ -36,7 +36,7 @@ Generated with this pack's guide and place cards (see `docs/qa-field-notes.md` f
 
 ## How to use it
 
-1. Attach a reference image of the default Muse character, so its shape, face, and felt plush texture stay consistent. (A screenshot of your own Muse's default avatar works; the pack can't redistribute the character's image.)
+1. Attach a reference image of your Muse's avatar — the one you configured, so its shape, face, and texture stay consistent. (A Muse agent building this for you can fetch that avatar image itself; if you have configured no avatar, the default Muse avatar works. The pack can't redistribute character images.)
 2. Pick a place card. Slot its variables (SPOT_DESCRIPTION, KEY_FEATURE, FACTS_AGAINST_STEREOTYPE, ANGLE_AND_CROP, PEOPLE, AVOID) into the template in the generation guide, and fill in the remaining variables — season, time of day, weather, clutter, Muse's action, light.
 3. Generate the photo only. Keep Muse's height at about 1 m, vary how it appears (close-up, peeking from behind something, back view, small in a corner — not always full-body in the foreground), and never give it a peace sign: on fingerless mitten hands, a peace sign makes the model grow fingers. Raise one hand instead.
 4. Composite the handwritten line in afterwards, as a separate step, on a cream paper band. Keep it short and quiet — the guide's rule is a line with room in it, like "Still here, still warm.", that does not pretend to know the recipient's memories.

@@ -12,11 +12,12 @@ to build everything, see `BUILD.md` at the repository root.
 
 ## What the visitor experiences
 
-A small toy: Muse travels through Japan on the visitor's behalf, and one
+A small toy: the visitor's own Muse — wearing the avatar the visitor
+configured for it — travels through Japan on the visitor's behalf, and one
 postcard is waiting for the visitor each day. It is a **revisit** toy,
 aimed at people who have been to Japan: Muse re-walks the Japan the
 visitor misses, and each postcard is a photo of a place there — with the
-default Muse character somewhere in the frame — plus a single
+visitor's Muse avatar somewhere in the frame — plus a single
 handwritten-style line. That is all a postcard carries: no long diary, no
 travel information.
 

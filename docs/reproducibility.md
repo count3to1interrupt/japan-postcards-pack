@@ -26,12 +26,14 @@ These parts are fully contained in the pack, specified completely enough to exec
   place's name.
 - The **handwritten line is composited afterwards**, never generated as
   part of the photo.
-- The **character specification** (about 1 m tall, mitten hands with no
-  fingers, varied appearances) together with a reference image. Getting
-  the reference image: use an image of your own Muse's default avatar
-  (for example, a screenshot from the Muse app). The pack cannot
-  redistribute the character's image, so the reference is the one input
-  you supply yourself.
+- The **character specification** (size held consistent, hands as the
+  reference shows them — mitten hands with no fingers for the default
+  character — varied appearances) together with a reference image.
+  Getting the reference image: use an image of your own Muse's
+  configured avatar (a Muse agent can fetch it; a screenshot from the
+  Muse app also works; the default Muse avatar if none is
+  configured). The pack cannot redistribute character images, so the
+  reference is the one input you supply yourself.
 
 ## Layer 2 — Travels as calibrated starting values
 

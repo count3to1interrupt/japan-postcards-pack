@@ -64,6 +64,8 @@ No golden-hour glow unless stated, no light rays, no heavy background blur, no o
 {AVOID — the place card's own AVOID items, appended after the common text above}
 ```
 
+**The character paragraph describes the default Muse; rewrite it for the actual traveler.** The traveler is the user's own Muse avatar (see BUILD.md, step 1). The [MUSE] paragraph in the template above — cream-beige plush, mitten hands, about 1 m — is written for the default character. When the reference image is a configured avatar, rewrite that paragraph from the reference's actual features (shape, face, materials, proportions) and keep the same discipline: hold the character's size consistent across the series, describe its hands as they are (the no-fingers wording applies only to mitten-handed characters), and match its texture to the reference. The worked example below and the pack's samples use the default character.
+
 The first five variables of [PHOTO], and the appended part of [AVOID], come from the place card, in this order: SPOT_DESCRIPTION → KEY_FEATURE → FACTS_AGAINST_STEREOTYPE → ANGLE_AND_CROP → PEOPLE, then the card's AVOID after the template's common AVOID text. Card text can itself contain variables in braces — {AREA} inside a SPOT_DESCRIPTION, Miyajima's {TIDE}, Kiyomizu-dera's {SEASON}. Resolve those nested variables first (choose one of the alternatives and substitute it) before assembling the prompt.
 
 How to fill in the variables:

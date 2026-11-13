@@ -37,13 +37,24 @@ handwritten-style line.
 
 ### 1. Get the character reference image — do not skip this
 
-The pack cannot redistribute the default Muse character's image, so
-**the pack contains no reference image**. Ask the user for one before
-generating anything: a screenshot of their own Muse's default avatar
-works. Attach that same reference to *every* generation call — the
-character's shape, face, and felt plush texture stay consistent only
-while the reference does. If the user cannot supply one, stop and say
-so; do not substitute a described-from-memory character.
+The traveler in the postcards is **the user's own Muse, wearing the
+avatar the user configured for it** — that configured face is what
+travels Japan in the user's place and sends the postcards back. The
+pack cannot redistribute character images, so **the pack contains no
+reference image**; obtain the avatar image before generating anything:
+
+- If you are a Muse agent building this for your user, fetch the
+  avatar yourself: your avatar tools return the currently configured
+  avatar's image (and the default Muse avatar as well). Use the
+  **configured** avatar. If the user has configured none, use the
+  default Muse avatar.
+- Otherwise, ask the user for an image of their Muse's avatar (a
+  screenshot works).
+
+Attach that same reference to *every* generation call — the
+character's shape, face, and texture stay consistent only while the
+reference does. If no avatar image can be obtained, stop and say so;
+do not substitute a described-from-memory character.
 
 ### 2. Fix the pool and the draw
 
@@ -120,8 +131,8 @@ hand over.
 
 ## Definition of done
 
-- [ ] Character reference image obtained from the user and used for
-      every generation
+- [ ] Character reference image — the user's configured Muse avatar,
+      fetched or supplied — obtained and used for every generation
 - [ ] Japan-wide pool built; trips are 7 days; the 7-postcard random
       draw is fixed per visitor at trip start (stored, no duplicates,
       no re-roll on later visits)
