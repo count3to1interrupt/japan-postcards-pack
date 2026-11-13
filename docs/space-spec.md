@@ -32,7 +32,7 @@ sent word.
 - **Japan-wide.** A trip roams Japan: the photo pool spans regions, and
   the promise is not one fixed region but "Muse went back to Japan for
   you, once more."
-- **The seven are drawn at random, once.** At trip start, seven
+- **The nine are drawn at random, once.** At trip start, nine
   postcards are drawn at random from the pre-generated pool and fixed
   for that visitor as the trip's sequence (stored in `postcard_ids`).
   The draw never changes on later visits; re-opening the Space never
@@ -45,7 +45,7 @@ sent word.
   everyday life, as a guideline for composing the pool — not a fixed
   ratio. The everyday side (a convenience store, a station platform, a
   vending machine on a night street) is where the memories live.
-- **Length:** 7 days (7 postcards).
+- **Length:** 9 days (9 postcards).
 - **Language:** English. (In the source design this is a provisional
   decision; because the text is composited on the display side, it can
   be changed later without regenerating any photo.)
@@ -54,7 +54,7 @@ sent word.
 
 ## Start flow
 
-1. **The draw happens at start** — seven postcards are drawn at random
+1. **The draw happens at start** — nine postcards are drawn at random
    from the pool and fixed as this visitor's trip (see "The shape of a
    trip").
 2. **Enter a name** for the letters to be addressed to. If left empty,
@@ -201,7 +201,7 @@ should keep equivalents while testing:
 
 ## The current shape
 
-A trip is **7 days**: seven postcards drawn at random from a Japan-wide
+A trip is **9 days**: nine postcards drawn at random from a Japan-wide
 pool, one waiting each day. It is tested against exactly one question,
 with 3–5 people who have travelled to Japan:
 

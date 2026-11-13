@@ -7,7 +7,7 @@ one input the pack deliberately does **not** contain is the character
 reference image (step 1).
 
 The end product: a Space where one postcard a day is waiting for a
-visitor — seven postcards drawn at random from a Japan-wide pool of
+visitor — nine postcards drawn at random from a Japan-wide pool of
 photos of Muse re-visiting places in Japan, each delivered as a
 sealed letter that flips open into a postcard with a single
 handwritten-style line.
@@ -58,10 +58,10 @@ do not substitute a described-from-memory character.
 
 ### 2. Fix the pool and the draw
 
-A trip is **7 days**. There is no single fixed region or route: build
+A trip is **9 days**. There is no single fixed region or route: build
 a **Japan-wide pool** from the place cards, leaning everyday (roughly
 3 sightseeing : 7 everyday across the pool, as a guideline). At trip
-start, the Space draws **7 postcards at random** from the pool and
+start, the Space draws **9 postcards at random** from the pool and
 fixes them as that visitor's sequence — the draw is stored (see the
 space spec's state model), never re-rolled on later visits, and
 contains no duplicates. A new trip after a reset draws fresh. (The
@@ -133,7 +133,7 @@ hand over.
 
 - [ ] Character reference image — the user's configured Muse avatar,
       fetched or supplied — obtained and used for every generation
-- [ ] Japan-wide pool built; trips are 7 days; the 7-postcard random
+- [ ] Japan-wide pool built; trips are 9 days; the 9-postcard random
       draw is fixed per visitor at trip start (stored, no duplicates,
       no re-roll on later visits)
 - [ ] Photo pool generated for every place in the pool, several per
